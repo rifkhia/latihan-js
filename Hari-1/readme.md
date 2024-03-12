@@ -1,4 +1,4 @@
-# Day One
+# Akim
 ***
 ## GitHub
 
