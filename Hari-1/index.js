@@ -4,7 +4,7 @@ let var3 = 2 //number
 let var4 = 1.2 //float
 let var5 = true //boolean
 
-//PERCABANGAN ATAU KONDISIONAL
+//PERCABANGAN ATAU KONDISIONAL1
 
 if(var5){
 
