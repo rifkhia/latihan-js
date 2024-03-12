@@ -1,77 +1,39 @@
-function add(a, b){
-    return a+b
-}
-
-
-/*
-FizzBuzz Function
-Ketika n dapat dibagi 3 => print "Fizz"
-Ketika n dapat dibagi 5 => print "Buzz"
-Ketika n dapat dibagi 3 & 5 => print "FizzBuzz"
-*/
-function fizzBuzz(n){
-    for(let i = 0; i<=n; i++){
-        if(i%5==0 && i%3==0){
-            console.log("FizzBuzz")
-        } else if(i%3==0){
-            console.log("Fizz")
-        } else if(i%5==0){
-            console.log("Buzz")
-        } else{
+//----------------------------LATIHAN 1----------------------------------------------
+function fizzBuzz(n) {
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log(i, "FizzBuzz");
+        } else if (i % 3 === 0) {
+            console.log(i, "Fizz");
+        } else if (i % 5 === 0) {
+            console.log(i, "Buzz");
+        } else {
             console.log(i)
         }
     }
 }
 
-/*
-isPalindrome Function
-Ketika bentuk balikan kata sama dengan kata nya, maka true
+fizzBuzz(100);
 
-"kasurinirusak"
-
-kata[0] != kata[12]
-kata[1] != kata[11]
-kata[2] != kata[10]
-.
-.
-.
-kata[5]!=kata[7]
-*/
+//----------------------------LATIHAN 2----------------------------------------------
 function isPalindrome(kata){
-    let leftPointer = 0;
-    let rightPointer = kata.length - 1;
-
-    while(leftPointer<rightPointer){
-        if(kata[leftPointer]!=kata[rightPointer]){
-            return false
-        }
-        leftPointer++
-        rightPointer--
+    dibalik = kata.split('').reverse().join('');
+    if (kata === dibalik){
+        console.log("Palindrome Bang")
+    } else {
+        console.log("egk bg,", kata, "kalo dibalik jadi", dibalik)
     }
-
-    return true
-
-    // for(let i = 0; i<kata.length/2; i++){
-    //     if(kata[i]!=kata[kata.length-1-i]){
-    //         return false
-    //     }
-    // }
-    // return true
 }
 
-console.log(isPalindrome("kasurinirusak"))
+isPalindrome('1nunun1')
 
-
-/*
-function lastSumDigit(a)
-a = 981
-a = 9 + 8 + 1
-a = 18
-a = 1 + 8
-a = 9
-*/
+//----------------------------LATIHAN 3----------------------------------------------
 function lastSumDigit(a) {
-    
+    let sum = a;
+    while (sum > 9) {
+        sum = sum.toString().split('').reduce((acc, digit) => acc + parseInt(digit, 10), 0);
+    }
+    return sum;
 }
 
-
+console.log(lastSumDigit(5781));
